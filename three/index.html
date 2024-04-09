@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			html, body { 
+				margin: 0;
+				height: 100%;
+			}
+			#c {
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="c"></canvas>
+	</body>
+		<script type="importmap">
+		{
+			"imports": {
+				"three": "./three.module.js",
+                "loader": "./GLTFLoader.js",
+                "draco": "./DRACOLoader.js",
+				"three/addons/": "./different/path/to/examples/jsm/"
+			  }
+		}
+		</script>
+
+		<script type="module" src="./main.js"></script>
+</html>
