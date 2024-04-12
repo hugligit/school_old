@@ -1,88 +1,80 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <!-- {{{ -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+        <title>reveal.js</title
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+        <link rel="stylesheet" href="dist/reset.css">
+        <link rel="stylesheet" href="dist/reveal.css">
+        <link rel="stylesheet" href="dist/theme/black.css">
+        <link rel="stylesheet" href="intervention.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-background-color="aquamarine">Slide 1</section>
-				<section data-background-color="rgb(70, 70, 255)">Slide 2</section>
-				<section>hugli</section>
-				<section>
-					<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)">Q</section>
-					<section data-background-gradient="radial-gradient(#283b95, #17b2c3)">R</section>
-				</section>
-				<section>
-					<p class="fragment">Fade in</p>
-					<p class="fragment fade-out">Fade out</p>
-					<p class="fragment highlight-red">Highlight red winker</p>
-					<p class="fragment fade-in-then-out">Fade in, then out</p>
-					<p class="fragment fade-up">Slide up while fading in</p>
-				</section>
-				<section>
-                    <!-- <iframe data-src="https://www.youtube.com/embed/epnKO1NEzto"> -->
-                    <!-- <iframe data-src="https://www.youtube.com/embed/1HwNoTPVt08" -->
-                            <!-- allowFullScreen="allowFullScreen" frameBorder="0" -->
-                        <!-- > </iframe> -->
-                    <p>Check out <a href="https://youtube.com/embed/1HwNoTPVt08?start=68" target="_blank" rel="noopener noreferrer">freeCodeCamp</a>.</p>
-				</section>
-				<section>
-                    <iframe scrolling="no" title="Transformations" src="https://www.geogebra.org/material/iframe/id/gvbcb4um/width/1280/height/849/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1280px" height="849px" style="border:0px;"> </iframe>
-				</section>
-				<section>
-                    <section>
-                        <h2>The Lorenz Equations</h2>
-                        \[\begin{aligned}
-                        \dot{x} &amp; = \sigma(y-x) \\
-                        \dot{y} &amp; = \rho x - y - xz \\
-                        \dot{z} &amp; = -\beta z + xy
-                        \end{aligned} \]
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    </head>
+    <!-- }}} -->
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <section id="g" data-background-image="images/Title.jpg" data-background-size="contain">
                     </section>
 
-                    <section>
-                        <h2>Quadratic Equation</h2>
-                        \[\begin{aligned}
-                        \frac{-b \pm \sqrt{b^2 - 4ac}} {2a}
-                        \end{aligned} \]
-                    </section>
+                    <!-- <section> -->
+                    <!--     \[ -->
+                    <!--     \frac{-b \pm \sqrt{\htmlStyle{color: red;}{b^2 - 4ac}}}{2a} -->
+                    <!--     \] -->
+                    <!-- </section> -->
 
-                    <section>
-                        <h2>Playground</h2>
-                        \[\begin{aligned}
-                        \ a + b
-                        \end{aligned} \]
-                    </section>
-				</section>
 
-			</div>
-		</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script src="plugin/math/math.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+                    <!-- <section> -->
+                    <!--     <ol> -->
+                    <!--         <li class="fragment current-visible">\[ (a+b)^2 \]</li> -->
+                    <!--         <li class="fragment current-visible">\[  (a+b)(a+b) \]</li> -->
+                    <!--         <li class="fragment current-visible">\[  a^2 + ab +ab +b^2 \]</li> -->
+                    <!--         <li class="fragment current-visible">\[  a^2 + 2ab +b^2 \]</li> -->
+                    <!--     </ol> -->
+                    <!-- </section> -->
+                </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
-			});
-		</script>
-	</body>
+            </div>
+        </div>
+
+        <script src="intervention.js"></script>
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/math/math.js"></script>
+        <script>
+            <!-- {{{ -->
+                            // More info about initialization & config:
+                            // - https://revealjs.com/initialization/
+                            // - https://revealjs.com/config/
+                            Reveal.initialize({
+                                            dependencies: [
+                                                            {src: "plugin/countdown/countdown.js"}
+                                                        ],
+                                            katex: { trust: true },
+                                            countdown: {
+                                                            defaultTime: 600,
+                                                            autostart: "no",
+                                                            tDelta: 10,
+                                                            playTickSoundLast: 5,
+                                                            tickSound: "http://soundbible.com/grab.php?id=2044&type=mp3",
+                                                            timeIsUpSound: "http://soundbible.com/grab.php?id=1746&type=mp3"
+                                                        },
+
+                                            hash: true,
+
+                                            // Learn about plugins: https://revealjs.com/plugins/
+                                            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+                                        });
+        </script>
+        <!-- }}} -->
+    </body>
 </html>

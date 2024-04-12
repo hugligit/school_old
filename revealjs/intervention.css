@@ -1,0 +1,17 @@
+span.katex {
+    font-size: 90px;
+}
+
+#q countdown {
+    color: #7272aa;
+}
+#w countdown {
+    color: #72aa72;
+}
+#e countdown {
+    color: #aa7272;
+}
+
+section.easy { 
+    /* background-image: radial-gradient(circle, #184818, #000100); */
+}
