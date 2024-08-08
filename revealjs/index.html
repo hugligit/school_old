@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="dist/reveal.css">
         <link rel="stylesheet" href="dist/theme/black.css">
         <link rel="stylesheet" href="intervention.css">
+        <link rel="stylesheet" href="https://unpkg.com/tldreveal/dist/bundle/index.css" />
 
         <!-- Theme used for syntax highlighted code -->
         <link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -21,6 +22,7 @@
             <div class="slides">
                 <section>
                     <section id="g" data-background-image="images/Title.jpg" data-background-size="contain">
+                        <h1 class='menu-title'>title</h1>
                     </section>
 
                     <!-- <section> -->
@@ -50,6 +52,8 @@
         <script src="plugin/markdown/markdown.js"></script>
         <script src="plugin/highlight/highlight.js"></script>
         <script src="plugin/math/math.js"></script>
+        <script src="plugin/menu/menu.js"></script>
+		<script src="https://unpkg.com/tldreveal@1.0.0/dist/bundle/index.js"></script>
         <script>
             <!-- {{{ -->
                             // More info about initialization & config:
@@ -60,6 +64,16 @@
                                                             {src: "plugin/countdown/countdown.js"}
                                                         ],
                                             katex: { trust: true },
+                                            menu: {
+                                                            side: 'left',
+                                                            // custom: true,
+                                                            // themes: [
+                                                            //                { name: 'black', theme: 'dist/theme/black.css'},
+                                                            //             ],
+                                                            themes: true,
+                                                            themesPath: 'dist/theme/',
+
+                                                        },
                                             countdown: {
                                                             defaultTime: 600,
                                                             autostart: "no",
@@ -70,9 +84,11 @@
                                                         },
 
                                             hash: true,
+											// tldreveal does not support scroll view
+											scrollActivationWidth: undefined,
 
                                             // Learn about plugins: https://revealjs.com/plugins/
-                                            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+                                            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealMenu, Tldreveal.Tldreveal() ]
                                         });
         </script>
         <!-- }}} -->

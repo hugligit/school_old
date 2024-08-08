@@ -8,12 +8,12 @@ String.prototype.format = function () {
 
 const slides = document.querySelector(".slides");
 
-const t = '\\[\\begin{aligned} {} \\end{aligned} \\]' +
+const t = '<h1 class="menu-title">{}</h1> \\[\\begin{aligned} {} \\end{aligned} \\]' +
           '<countdown time="{}" autostart="no" />';
 
 let problems = [
     [//{ EASY OK
-        ["#181848", "#000001", 30, "q"],
+        ["#181848", "#000001", 30, "q", "easy "],
         [ // {
             "24 - 10 + 8 - 5 + 3",
             "24 - (10 + 8 - 5) + 3",
@@ -71,7 +71,7 @@ let problems = [
         ] // }
     ],//}
     [//{ MODERATE OK
-        ["#184818", "#001000", 45, "w"], 
+        ["#184818", "#001000", 45, "w", "moderate "], 
         [ // {
             "5 + 3 - 2 * 4 / 2 + 1",
             "5 + 3 - 2 ( 4 / 2 + 1)",
@@ -137,7 +137,7 @@ let problems = [
         ] // }
     ],//}
     [//{ CHALLENGING
-        ["#481818", "#100000", 60, "e"], 
+        ["#481818", "#100000", 60, "e", "challenging "], 
         [ // {
             "\\frac{\\sqrt{26 - 10}}{2^3 - 5 + 4}",
             "\\frac{21 + 4 - 7}{ 3^2- 2 }",
@@ -213,23 +213,24 @@ problems.forEach(difficulty => {
 
     
 
-    const exercises = new Set();
+    let exercises = new Set();
     while(exercises.size < 5) {
         exercises.add(Math.floor(Math.random() * (difficulty[1].length-1)));
     }
+    exercises = Array.from(exercises)
     
     // let exercises  = Array.from({length:difficulty[1].length}, (v,k) => k);
     // console.log(exercises);
 
     slides.appendChild(easy);
-    exercises.forEach(i => {
-        // console.log(i);
+    exercises.forEach((i, index) => {
+        console.log(i, index);
         let p = difficulty[1][i];
         if(p === "") { return }
         p = p.replace(/\*/g, "\\times");
         p = p.replace(/\//g, "\\div");
             let s = document.createElement("section");
-            s.innerHTML = t.format(p, difficulty[0][2]);
+            s.innerHTML = t.format(difficulty[0][4]+index, p, difficulty[0][2]);
             easy.appendChild(s);
         });
 });

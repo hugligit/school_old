@@ -15,3 +15,7 @@ span.katex {
 section.easy { 
     /* background-image: radial-gradient(circle, #184818, #000100); */
 }
+
+.menu-title {
+    display: none;
+}
